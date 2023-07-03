@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_pos_or_neg"
+        android:id="@+id/btn_point"
         style="@style/buttonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:text="+/-"
+        android:text="."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn0"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,16 +26,16 @@
         android:background="@drawable/rounded_button"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_float"
-        app:layout_constraintStart_toEndOf="@id/btn_pos_or_neg" />
+        app:layout_constraintEnd_toStartOf="@id/btn_back"
+        app:layout_constraintStart_toEndOf="@id/btn_point" />
 
     <Button
-        android:id="@+id/btn_float"
+        android:id="@+id/btn_back"
         style="@style/buttonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:text=","
+        android:background="@drawable/operator_button"
+        android:text="⌫"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_equals"
         app:layout_constraintStart_toEndOf="@id/btn0" />
@@ -49,7 +49,7 @@
         android:text="="
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_float" />
+        app:layout_constraintStart_toEndOf="@id/btn_back" />
 
     <Button
         android:id="@+id/btn1"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="1"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pos_or_neg"
+        app:layout_constraintBottom_toTopOf="@+id/btn_point"
         app:layout_constraintEnd_toStartOf="@id/btn2"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="3"
-        app:layout_constraintBottom_toTopOf="@+id/btn_float"
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
         app:layout_constraintEnd_toStartOf="@id/btn_increment"
         app:layout_constraintStart_toEndOf="@+id/btn2" />
 
@@ -196,68 +196,69 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
-        android:text="C"
+        android:text="AC"
         app:layout_constraintBottom_toTopOf="@id/btn7"
-        app:layout_constraintEnd_toStartOf="@id/btn_percent"
+        app:layout_constraintEnd_toStartOf="@id/btn_bracket_open"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_percent"
+        android:id="@+id/btn_bracket_open"
         style="@style/buttonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
-        android:text="%"
+        android:text="("
         app:layout_constraintBottom_toTopOf="@id/btn8"
-        app:layout_constraintEnd_toStartOf="@id/btnDivide"
+        app:layout_constraintEnd_toStartOf="@id/btn_bracket_close"
         app:layout_constraintStart_toEndOf="@id/btn_clear" />
 
     <Button
-        android:id="@+id/btnDivide"
+        android:id="@+id/btn_bracket_close"
+        style="@style/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/operator_button"
+        android:text=")"
+        app:layout_constraintBottom_toTopOf="@+id/btn9"
+        app:layout_constraintEnd_toStartOf="@id/btn_divide"
+        app:layout_constraintStart_toEndOf="@id/btn_bracket_open" />
+
+    <Button
+        android:id="@+id/btn_divide"
         style="@style/buttonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="/"
-        app:layout_constraintBottom_toTopOf="@+id/btn9"
-        app:layout_constraintEnd_toStartOf="@id/btn_Clear_Latest"
-        app:layout_constraintStart_toEndOf="@id/btn_percent" />
-
-    <Button
-        android:id="@+id/btn_Clear_Latest"
-        style="@style/buttonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/operator_button"
-        android:text="->"
         app:layout_constraintBottom_toTopOf="@id/btn_multiply"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnDivide" />
+        app:layout_constraintStart_toEndOf="@id/btn_bracket_close" />
 
     <TextView
+        android:id="@+id/tv_process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_process"
+        android:gravity="center|end"
         android:lines="2"
         android:maxLines="2"
-        android:textAlignment="textEnd"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/tv_result"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
         android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center|end"
         android:lines="1"
         android:maxLines="1"
-        android:textAlignment="textEnd"
-        android:textSize="50sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_process"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_process" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
