@@ -12,18 +12,22 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private var tvResult:TextView by Delegates.notNull()
     private var tvProcess:TextView by Delegates.notNull()
+    private var tvHistory:TextView by Delegates.notNull()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         tvResult = findViewById(R.id.tv_result)
         tvProcess = findViewById(R.id.tv_process)
+        tvHistory = findViewById(R.id.tv_history)
         savedInstanceState?.takeIf {
             it.containsKey(KEY_TEXT_RESULT)
             it.containsKey(KEY_TEXT_PROCESS)
+            it.containsKey(KEY_TEXT_HISTORY)
         }?.let {
             tvResult.text = it.getString(KEY_TEXT_RESULT)
             tvProcess.text = it.getString(KEY_TEXT_PROCESS)
+            tvHistory.text = it.getString(KEY_TEXT_HISTORY)
         }
         with(binding) {
             btn0.setOnClickListener { setText("0") }
@@ -73,6 +77,8 @@ class MainActivity : AppCompatActivity() {
                 {
                     tvResult.text = "${e.message}"
                 }
+                tvHistory.text = "Last action: ${tvProcess.text} = ${tvResult.text}"
+
             }
         }
 
@@ -82,10 +88,12 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putString(KEY_TEXT_RESULT, tvResult.text.toString())
         outState.putString(KEY_TEXT_PROCESS, tvProcess.text.toString())
+        outState.putString(KEY_TEXT_HISTORY, tvHistory.text.toString())
     }
     companion object{
         private const val KEY_TEXT_RESULT ="KEY_TEXT_VALUE"
         private const val KEY_TEXT_PROCESS ="KEY_TEXT_PROCESS"
+        private const val KEY_TEXT_HISTORY ="KEY_TEXT_HISTORY"
 
     }
 

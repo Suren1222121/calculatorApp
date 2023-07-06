@@ -10,8 +10,6 @@
     <Button
         android:id="@+id/btn_point"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="."
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,8 +19,6 @@
     <Button
         android:id="@+id/btn0"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,8 +28,6 @@
     <Button
         android:id="@+id/btn_back"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="⌫"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,8 +37,6 @@
     <Button
         android:id="@+id/btn_equals"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="="
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,8 +46,6 @@
     <Button
         android:id="@+id/btn1"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="1"
         app:layout_constraintBottom_toTopOf="@+id/btn_point"
@@ -67,8 +57,6 @@
     <Button
         android:id="@+id/btn2"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="2"
         app:layout_constraintBottom_toTopOf="@+id/btn0"
@@ -78,8 +66,6 @@
     <Button
         android:id="@+id/btn3"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="3"
         app:layout_constraintBottom_toTopOf="@+id/btn_back"
@@ -89,8 +75,6 @@
     <Button
         android:id="@+id/btn_increment"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/btn_equals"
@@ -100,8 +84,6 @@
     <Button
         android:id="@+id/btn4"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="4"
         android:textColor="@color/black"
@@ -113,8 +95,6 @@
     <Button
         android:id="@+id/btn5"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="5"
         app:layout_constraintBottom_toTopOf="@id/btn2"
@@ -126,8 +106,6 @@
     <Button
         android:id="@+id/btn6"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="6"
         app:layout_constraintBottom_toTopOf="@id/btn3"
@@ -137,8 +115,6 @@
     <Button
         android:id="@+id/btn_decrement"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="-"
         app:layout_constraintBottom_toTopOf="@id/btn_increment"
@@ -148,8 +124,6 @@
     <Button
         android:id="@+id/btn7"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="7"
         app:layout_constraintBottom_toTopOf="@id/btn4"
@@ -159,8 +133,6 @@
     <Button
         android:id="@+id/btn8"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="8"
         app:layout_constraintBottom_toTopOf="@id/btn5"
@@ -170,8 +142,6 @@
     <Button
         android:id="@+id/btn9"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/yellow"
         android:text="9"
@@ -182,8 +152,6 @@
     <Button
         android:id="@+id/btn_multiply"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="X"
         app:layout_constraintBottom_toTopOf="@id/btn_decrement"
@@ -193,8 +161,6 @@
     <Button
         android:id="@+id/btn_clear"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="AC"
         app:layout_constraintBottom_toTopOf="@id/btn7"
@@ -204,8 +170,6 @@
     <Button
         android:id="@+id/btn_bracket_open"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="("
         app:layout_constraintBottom_toTopOf="@id/btn8"
@@ -215,8 +179,6 @@
     <Button
         android:id="@+id/btn_bracket_close"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text=")"
         app:layout_constraintBottom_toTopOf="@+id/btn9"
@@ -226,8 +188,6 @@
     <Button
         android:id="@+id/btn_divide"
         style="@style/landscape_version_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/operator_button"
         android:text="/"
         app:layout_constraintBottom_toTopOf="@id/btn_multiply"
@@ -236,13 +196,13 @@
 
     <TextView
         android:id="@+id/tv_process"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="top|end"
-        android:lines="2"
-        android:maxLines="2"
+        android:lines="1"
+        android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/tv_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -250,15 +210,26 @@
 
     <TextView
         android:id="@+id/tv_result"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="top|end"
         android:lines="1"
         android:maxLines="1"
         android:textColor="@color/black"
         android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_history"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_process" />
-
+<TextView
+    android:id="@+id/tv_history"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:textColor="@color/space_grey"
+    android:textSize="20sp"
+    android:gravity="top|end"
+    app:layout_constraintTop_toBottomOf="@id/tv_result"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

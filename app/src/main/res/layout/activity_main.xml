@@ -261,4 +261,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_process" />
 
+    <TextView
+        android:id="@+id/tv_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/space_grey"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
