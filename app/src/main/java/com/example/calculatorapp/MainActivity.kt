@@ -2,16 +2,29 @@ package com.example.calculatorapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.example.calculatorapp.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.lang.Exception
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private var tvResult:TextView by Delegates.notNull()
+    private var tvProcess:TextView by Delegates.notNull()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        tvResult = findViewById(R.id.tv_result)
+        tvProcess = findViewById(R.id.tv_process)
+        savedInstanceState?.takeIf {
+            it.containsKey(KEY_TEXT_RESULT)
+            it.containsKey(KEY_TEXT_PROCESS)
+        }?.let {
+            tvResult.text = it.getString(KEY_TEXT_RESULT)
+            tvProcess.text = it.getString(KEY_TEXT_PROCESS)
+        }
         with(binding) {
             btn0.setOnClickListener { setText("0") }
             btn1.setOnClickListener { setText("1") }
@@ -65,13 +78,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_TEXT_RESULT, tvResult.text.toString())
+        outState.putString(KEY_TEXT_PROCESS, tvProcess.text.toString())
+    }
+    companion object{
+        private const val KEY_TEXT_RESULT ="KEY_TEXT_VALUE"
+        private const val KEY_TEXT_PROCESS ="KEY_TEXT_PROCESS"
+
+    }
+
     fun setText(str:String)
     {
-        if (binding.tvResult.text!="")
+        if (tvResult.text!="")
         {
-            binding.tvProcess.text = binding.tvResult.text
-            binding.tvResult.text = ""
+            tvProcess.text = tvResult.text
+            tvResult.text = ""
         }
-        binding.tvProcess.append(str)
+            tvProcess.append(str)
     }
 }
